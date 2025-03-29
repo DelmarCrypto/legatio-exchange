@@ -304,25 +304,29 @@ body {
 
 .partner-logos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(6, 1fr); /* 6 colonnes pour la première rangée */
     gap: 1rem;
     justify-items: center;
     align-items: center;
     padding: 0 1rem;
 }
 
-.partner-logos svg {
-    transition: transform 0.3s;
+/* Positionner MakerDAO et Coinbase sur une deuxième rangée */
+.partner-logos-grid a:nth-child(7),
+.partner-logos-grid a:nth-child(8) {
+    grid-column: 3 / 5; /* Centrer les deux logos sur la deuxième rangée */
 }
 
-.partner-logos svg:hover {
-    transform: scale(1.1);
-}
-
+/* Ajuster la disposition pour les écrans plus petits */
 @media (max-width: 768px) {
     .partner-logos-grid {
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
         gap: 0.5rem;
+    }
+
+    .partner-logos-grid a:nth-child(7),
+    .partner-logos-grid a:nth-child(8) {
+        grid-column: auto; /* Revenir à une disposition automatique sur petits écrans */
     }
 
     .partner-logos svg {
@@ -333,6 +337,14 @@ body {
     .partner-logos svg text {
         font-size: 16px;
     }
+}
+
+.partner-logos svg {
+    transition: transform 0.3s;
+}
+
+.partner-logos svg:hover {
+    transform: scale(1.1);
 }
 
 /* Crypto Prices */
