@@ -115,6 +115,26 @@
             box-shadow: 0 5px 15px rgba(255, 0, 122, 0.3);
         }
 
+        /* Specific Adjustments for "Pourquoi $LEG" and "Avant, Après" */
+        .token-benefits .token-benefit,
+        .before-after .before,
+        .before-after .after {
+            background: #2A2A2A; /* Slightly lighter background */
+            box-shadow: 0 0 10px rgba(255, 0, 122, 0.2); /* Subtle glow */
+        }
+
+        .token-benefits .token-benefit i,
+        .before-after .before h3::before,
+        .before-after .after h3::before {
+            opacity: 1; /* Ensure icons are fully visible */
+        }
+
+        .token-benefits .token-benefit p,
+        .before-after .before ul li,
+        .before-after .after ul li {
+            opacity: 1; /* Ensure text is fully visible */
+        }
+
         /* Navbar */
         .navbar {
             background: rgba(0, 0, 0, 0.8);
@@ -457,13 +477,26 @@
         }
 
         /* Partner Logos */
-        .partner-logos img {
-            max-height: 50px;
-            margin: 0 1rem;
+        .partner-logos {
+            text-align: center;
+            padding: 2rem 0;
+            background: #1A1A1A;
+            border-radius: 12px;
+        }
+
+        .partner-logos span {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text);
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .partner-logos svg {
             transition: transform 0.3s;
         }
 
-        .partner-logos img:hover {
+        .partner-logos svg:hover {
             transform: scale(1.1);
         }
     </style>
@@ -488,7 +521,7 @@
             <div class="header-content">
                 <h1>Legatio Finance</h1>
                 <p class="catchphrase">Finance décentralisée pour les actifs réels</p>
-                <a href="#start" class="cta-button" aria- label="Découvrir les offres">Découvrir Maintenant</a>
+                <a href="#start" class="cta-button" aria-label="Découvrir les offres">Découvrir Maintenant</a>
             </div>
         </section>
 
@@ -691,13 +724,21 @@
                 </div>
             </section>
 
-            <section class="section partner-logos" style="text-align: center; padding: 2rem 0; background: #1A1A1A; border-radius: 12px;">
-                <span style="font-size: 1.8rem; font-weight: 700; color: var(--text); display: block; margin-bottom: 1rem;">Nos partenaires</span>
-                <a href="https://www.lbank.com/" target="_blank" aria-label="LBank">
-                    <img src="https://www.lbank.com/static/images/logo.png" alt="LBank Logo">
+            <section class="section partner-logos">
+                <span>Nos partenaires</span>
+                <a href="https://www.lbank.com/" target="_blank" aria-label="Logo LBank" alt="Logo LBank">
+                    <svg width="150" height="50" xmlns="http://www.w3.org/2000/svg" class="partner-logo">
+                        <text x="10" y="35" font-family="sans-serif" font-size="20" fill="#0A66C2">L</text>
+                        <text x="25" y="35" font-family="sans-serif" font-size="20" fill="#FFD700">B</text>
+                        <path d="M28 20 L33 20 L30.5 25 L33 30 L28 30 Z M28 30 L33 30 L30.5 25 L33 20 L28 20" fill="#000000"/>
+                        <text x="40" y="35" font-family="sans-serif" font-size="20" fill="#0A66C2">ank</text>
+                    </svg>
                 </a>
-                <a href="https://chain.link/" target="_blank" aria-label="Chainlink">
-                    <img src="https://chain.link/images/chainlink-logo.png" alt="Chainlink Logo">
+                <a href="https://chain.link/" target="_blank" aria-label="Logo Chainlink" alt="Logo Chainlink">
+                    <svg width="150" height="50" xmlns="http://www.w3.org/2000/svg" class="partner-logo">
+                        <polygon points="10,15 25,5 40,15 40,35 25,45 10,35" fill="none" stroke="#375BD2" stroke-width="4"/>
+                        <text x="50" y="35" font-family="sans-serif" font-size="20" fill="#375BD2">Chainlink</text>
+                    </svg>
                 </a>
             </section>
 
