@@ -29,6 +29,8 @@
             --hover-dark: #FF4DA6;
             --accent-pink: #FF66B2;
             --glow: 0 0 10px #FF007A, 0 0 20px #FF007A, 0 0 30px #FF66B2;
+            --light-bg: #F5F5F5;
+            --light-text: #1A1A1A;
         }
 
         * {
@@ -44,6 +46,42 @@
             position: relative;
             overflow-x: hidden;
             line-height: 1.6;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        body.light-theme {
+            background: var(--light-bg);
+            color: var(--light-text);
+        }
+
+        body.light-theme .navbar,
+        body.light-theme .footer {
+            background: rgba(255, 255, 255, 0.9);
+            border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        body.light-theme .token-benefit,
+        body.light-theme .testimonial,
+        body.light-theme .roadmap-item,
+        body.light-theme .team-member,
+        body.light-theme .token-sale-item,
+        body.light-theme .simulator-form,
+        body.light-theme .swap-form,
+        body.light-theme .crypto-prices,
+        body.light-theme .partner-logos {
+            background: #FFFFFF;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        body.light-theme .cta-button {
+            background: #FFFFFF;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        body.light-theme .cta-button:hover {
+            background: var(--hover-dark);
+            color: var(--text);
         }
 
         body::before {
@@ -65,6 +103,7 @@
             top: 0;
             z-index: 1000;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: background 0.3s;
         }
 
         .navbar .container {
@@ -285,6 +324,7 @@
             padding: 1.5rem;
             text-align: center;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            transition: background 0.3s;
         }
 
         .social-links a {
@@ -317,6 +357,7 @@
             width: 90%;
             max-width: 500px;
             border-radius: 12px;
+            color: var(--text);
         }
 
         .partner-logos {
@@ -331,6 +372,14 @@
             font-weight: 700;
             display: block;
             margin-bottom: 1rem;
+        }
+
+        .partner-logos svg {
+            transition: transform 0.3s;
+        }
+
+        .partner-logos svg:hover {
+            transform: scale(1.1);
         }
 
         .hidden {
@@ -585,16 +634,27 @@
                 <span>Nos partenaires</span>
                 <a href="https://www.lbank.com/" target="_blank" rel="noopener noreferrer" aria-label="Logo LBank">
                     <svg width="150" height="50" xmlns="http://www.w3.org/2000/svg" class="partner-logo">
-                        <text x="10" y="35" font-family="sans-serif" font-size="20" fill="#0A66C2">L</text>
-                        <text x="25" y="35" font-family="sans-serif" font-size="20" fill="#FFD700">B</text>
-                        <path d="M28 20 L33 20 L30.5 25 L33 30 L28 30 Z M28 30 L33 30 L30.5 25 L33 20 L28 20" fill="#000000"/>
-                        <text x="40" y="35" font-family="sans-serif" font-size="20" fill="#0A66C2">ank</text>
+                        <defs>
+                            <linearGradient id="lbankGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color: var(--primary);" />
+                                <stop offset="100%" style="stop-color: var(--accent-pink);" />
+                            </linearGradient>
+                        </defs>
+                        <rect x="5" y="5" width="140" height="40" rx="10" fill="none" stroke="url(#lbankGradient)" stroke-width="2"/>
+                        <text x="20" y="35" font-family="Orbitron, sans-serif" font-size="24" fill="url(#lbankGradient)" text-shadow="var(--glow)">LBank</text>
+                        <circle cx="130" cy="25" r="5" fill="var(--primary)" filter="drop-shadow(0 0 5px var(--primary))"/>
                     </svg>
                 </a>
                 <a href="https://chain.link/" target="_blank" rel="noopener noreferrer" aria-label="Logo Chainlink">
                     <svg width="150" height="50" xmlns="http://www.w3.org/2000/svg" class="partner-logo">
-                        <polygon points="10,15 25,5 40,15 40,35 25,45 10,35" fill="none" stroke="#375BD2" stroke-width="4"/>
-                        <text x="50" y="35" font-family="sans-serif" font-size="20" fill="#375BD2">Chainlink</text>
+                        <defs>
+                            <linearGradient id="chainlinkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color: var(--primary);" />
+                                <stop offset="100%" style="stop-color: var(--accent-pink);" />
+                            </linearGradient>
+                        </defs>
+                        <polygon points="20,15 40,5 60,15 60,35 40,45 20,35" fill="none" stroke="url(#chainlinkGradient)" stroke-width="3" filter="drop-shadow(0 0 5px var(--primary))"/>
+                        <text x="70" y="35" font-family="Orbitron, sans-serif" font-size="20" fill="url(#chainlinkGradient)" text-shadow="var(--glow)">Chainlink</text>
                     </svg>
                 </a>
             </section>
@@ -882,7 +942,7 @@
             document.getElementById('collateral-type').addEventListener('change', updatePriceDisplay);
 
             document.getElementById('theme-toggle').addEventListener('click', () => {
-                document.body.classList.toggle('dark-theme');
+                document.body.classList.toggle('light-theme');
                 const icon = document.querySelector('#theme-toggle i');
                 icon.classList.toggle('fa-sun');
                 icon.classList.toggle('fa-moon');
