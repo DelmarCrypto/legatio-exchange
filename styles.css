@@ -288,7 +288,6 @@ body {
     color: #AAAAAA;
 }
 
-/* Partner Logos */
 .partner-logos {
     text-align: center;
     padding: 2rem 0;
@@ -299,9 +298,41 @@ body {
 .partner-logos span {
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--text);
     display: block;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.partner-logos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    justify-items: center;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.partner-logos svg {
+    transition: transform 0.3s;
+}
+
+.partner-logos svg:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .partner-logos-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 0.5rem;
+    }
+
+    .partner-logos svg {
+        width: 100px;
+        height: 40px;
+    }
+
+    .partner-logos svg text {
+        font-size: 16px;
+    }
 }
 
 /* Crypto Prices */
