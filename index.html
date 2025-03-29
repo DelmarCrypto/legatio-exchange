@@ -16,18 +16,19 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="main.css">
     <style>
         :root {
-            --primary: #FF007A; /* Uniswap purple from the screenshot */
+            --primary: #FF007A; /* Uniswap purple */
             --background: #000000; /* Black background */
             --text: #FFFFFF; /* White text */
             --button-bg: #1A1A1A; /* Dark button background */
             --button-text: #FF007A; /* Purple button text */
             --hover-dark: #FF4DA6; /* Lighter purple for hover */
             --accent-pink: #FF66B2; /* More pinkish tone for accents */
+            --glow: 0 0 10px #FF007A, 0 0 20px #FF007A, 0 0 30px #FF66B2;
         }
 
         * {
@@ -35,16 +36,30 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Orbitron', sans-serif;
             margin: 0;
             padding: 0;
-            background: var(--background);
+            background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat, linear-gradient(135deg, #000000 0%, #1A1A1A 100%);
             color: var(--text);
             transition: background 0.3s, color 0.3s;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 0, 122, 0.2) 0%, transparent 70%);
+            opacity: 0.3;
+            z-index: -1;
         }
 
         .dark-theme {
-            background: var(--background);
+            background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat, linear-gradient(135deg, #000000 0%, #1A1A1A 100%);
             color: var(--text);
         }
 
@@ -55,31 +70,54 @@
         .dark-theme .team-member,
         .dark-theme .simulator-form {
             background: #1A1A1A;
+            animation: fadeIn 1s ease-in-out;
         }
 
-        /* Starry Background */
-        .starry-background {
-            position: relative;
-            background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat, linear-gradient(135deg, #000000 0%, #1A1A1A 100%);
-            padding: 2rem;
-            border-radius: 12px;
-            overflow: hidden;
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .starry-background::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(255, 0, 122, 0.2) 0%, transparent 70%);
-            opacity: 0.3;
+        @keyframes glow {
+            0% { text-shadow: var(--glow); }
+            50% { text-shadow: 0 0 5px #FF007A, 0 0 10px #FF66B2; }
+            100% { text-shadow: var(--glow); }
+        }
+
+        /* Section Headings */
+        .section h2 {
+            text-shadow: var(--glow);
+            animation: glow 2s infinite;
+        }
+
+        /* Cards */
+        .token-benefit,
+        .testimonial,
+        .roadmap-item,
+        .team-member,
+        .token-sale-item {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .token-benefit:hover,
+        .testimonial:hover,
+        .roadmap-item:hover,
+        .team-member:hover,
+        .token-sale-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 0, 122, 0.3);
         }
 
         /* Navbar */
         .navbar {
-            background: var(--background);
+            background: rgba(0, 0, 0, 0.8);
             padding: 1rem;
             position: sticky;
             top: 0;
@@ -127,33 +165,23 @@
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--primary);
+            text-shadow: var(--glow);
         }
 
         /* Header */
         .header {
-            background: linear-gradient(135deg, #000000 0%, #1A1A1A 100%);
             padding: 4rem 1rem;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(255, 0, 122, 0.2) 0%, transparent 70%);
-            opacity: 0.5;
-        }
-
         .header-content h1 {
             font-size: 3rem;
             font-weight: 700;
             color: var(--primary);
-            margin: 0;
+            text-shadow: var(--glow);
+            animation: glow 2s infinite;
         }
 
         .header-content .catchphrase {
@@ -172,6 +200,7 @@
         /* Section */
         .section {
             padding: 2rem 0;
+            animation: fadeIn 1s ease-in-out;
         }
 
         /* Buttons */
@@ -183,12 +212,13 @@
             text-decoration: none;
             border-radius: 25px;
             font-weight: 500;
-            transition: background 0.3s, transform 0.3s;
+            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
         }
 
         .cta-button:hover {
             background: var(--hover-dark);
             transform: scale(1.05);
+            box-shadow: var(--glow);
         }
 
         .simulator-cta {
@@ -202,6 +232,7 @@
         .simulator-cta:hover {
             background: var(--hover-dark);
             border-color: var(--hover-dark);
+            box-shadow: var(--glow);
         }
 
         /* Grid Layouts */
@@ -306,11 +337,12 @@
             font-weight: 500;
             font-size: 1rem;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: background 0.3s, box-shadow 0.3s;
         }
 
         .swap-form button:hover {
             background: var(--hover-dark);
+            box-shadow: var(--glow);
         }
 
         /* Before and After Section */
@@ -323,16 +355,19 @@
 
         .before-after .before h3::before,
         .before-after .after h3::before {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
             font-size: 1.5rem;
             margin-right: 0.5rem;
+            color: var(--accent-pink);
         }
 
         .before-after .before h3::before {
-            content: "😢";
+            content: "\f05e"; /* fa-ban (barrier) */
         }
 
         .before-after .after h3::before {
-            content: "😊";
+            content: "\f015"; /* fa-home (house) */
         }
 
         /* Hidden Class */
@@ -342,7 +377,7 @@
 
         /* Footer */
         .footer {
-            background: var(--background);
+            background: rgba(0, 0, 0, 0.8);
             color: var(--text);
             padding: 1.5rem;
             text-align: center;
@@ -420,6 +455,17 @@
         #subscribe-form input {
             width: 250px;
         }
+
+        /* Partner Logos */
+        .partner-logos img {
+            max-height: 50px;
+            margin: 0 1rem;
+            transition: transform 0.3s;
+        }
+
+        .partner-logos img:hover {
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
@@ -442,7 +488,7 @@
             <div class="header-content">
                 <h1>Legatio Finance</h1>
                 <p class="catchphrase">Finance décentralisée pour les actifs réels</p>
-                <a href="#start" class="cta-button" aria-label="Découvrir les offres">Découvrir Maintenant</a>
+                <a href="#start" class="cta-button" aria- label="Découvrir les offres">Découvrir Maintenant</a>
             </div>
         </section>
 
@@ -474,7 +520,7 @@
                 </div>
             </section>
 
-            <section class="section before-after starry-background">
+            <section class="section before-after">
                 <h2>Avant et Après</h2>
                 <div class="before-after">
                     <div class="before">
@@ -496,7 +542,7 @@
                 </div>
             </section>
 
-            <section class="section why-choose starry-background">
+            <section class="section why-choose">
                 <h2>Pourquoi Nous Choisir ?</h2>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
                     <div style="text-align: center;">
@@ -517,7 +563,7 @@
                 </div>
             </section>
 
-            <section class="section how-to-invest starry-background" id="how-to-invest">
+            <section class="section how-to-invest" id="how-to-invest">
                 <h2>Comment Investir dans l’Immobilier Tokenisé ?</h2>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
                     <article style="text-align: center;">
@@ -539,7 +585,7 @@
                 <a href="#simulateur-rwa" class="cta-button">Démarrez avec MetaMask</a>
             </section>
 
-            <section class="section services starry-background">
+            <section class="section services">
                 <h2>Nos Solutions d’Investissement</h2>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
                     <article style="text-align: center;">
@@ -647,8 +693,12 @@
 
             <section class="section partner-logos" style="text-align: center; padding: 2rem 0; background: #1A1A1A; border-radius: 12px;">
                 <span style="font-size: 1.8rem; font-weight: 700; color: var(--text); display: block; margin-bottom: 1rem;">Nos partenaires</span>
-                <a href="https://www.lbank.com/" target="_blank" aria-label="LBank"><svg width="150" height="50" xmlns="http://www.w3.org/2000/svg"><text x="10" y="35" font-size="20" fill="#0A66C2">LBank</text></svg></a>
-                <a href="https://chain.link/" target="_blank" aria-label="Chainlink"><svg width="150" height="50" xmlns="http://www.w3.org/2000/svg"><text x="10" y="35" font-size="20" fill="#375BD2">Chainlink</text></svg></a>
+                <a href="https://www.lbank.com/" target="_blank" aria-label="LBank">
+                    <img src="https://www.lbank.com/static/images/logo.png" alt="LBank Logo">
+                </a>
+                <a href="https://chain.link/" target="_blank" aria-label="Chainlink">
+                    <img src="https://chain.link/images/chainlink-logo.png" alt="Chainlink Logo">
+                </a>
             </section>
 
             <section class="section crypto-prices" style="text-align: center; padding: 1.5rem; background: #1A1A1A; border-radius: 12px;">
