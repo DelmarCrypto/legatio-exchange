@@ -119,20 +119,28 @@
         .token-benefits .token-benefit,
         .before-after .before,
         .before-after .after {
-            background: #3A3A3A; /* Slightly lighter background */
-            box-shadow: 0 0 10px rgba(255, 0, 122, 0.2); /* Subtle glow */
+            background: #3A3A3A; /* Lighter background for better visibility */
+            box-shadow: 0 0 15px rgba(255, 0, 122, 0.3); /* Stronger glow */
+            border: 1px solid rgba(255, 0, 122, 0.2); /* Subtle border */
+            border-radius: 12px;
+            padding: 1.5rem;
         }
 
         .token-benefits .token-benefit i,
         .before-after .before h3::before,
         .before-after .after h3::before {
-            opacity: 1; /* Ensure icons are fully visible */
+            color: #FF99CC; /* Brighter pink for icons */
+            opacity: 1;
         }
 
+        .token-benefits .token-benefit h3,
         .token-benefits .token-benefit p,
+        .before-after .before h3,
+        .before-after .after h3,
         .before-after .before ul li,
         .before-after .after ul li {
-            opacity: 1; /* Ensure text is fully visible */
+            color: #FFFFFF; /* Pure white for text */
+            opacity: 1;
         }
 
         /* Navbar */
