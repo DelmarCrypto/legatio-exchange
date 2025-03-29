@@ -48,7 +48,6 @@
             --glow: 0 0 10px #FF007A, 0 0 20px #FF007A, 0 0 30px #FF66B2;
             --success: #28a745;
             --warning: #dc3545;
-            --gold: #FFD700; /* Couleur dorée pour le L */
         }
 
         * {
@@ -116,14 +115,13 @@
             outline: none;
         }
 
-        .navbar .logo {
-            height: 50px;
-            width: auto;
-        }
-
-        .navbar .logo-link {
-            display: inline-block;
-            text-decoration: none;
+        /* Style pour le texte "Legatio Finance" dans la navbar */
+        .navbar .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-shadow: var(--glow);
+            animation: glow 2s infinite;
         }
 
         .header {
@@ -479,8 +477,8 @@
                 gap: 1rem;
             }
 
-            .navbar .logo {
-                height: 40px; /* Réduit la taille sur mobile */
+            .navbar .logo-text {
+                font-size: 1.5rem; /* Réduit la taille sur mobile */
             }
 
             .header-content h1 {
@@ -517,37 +515,7 @@
     <header class="navbar">
         <nav class="container" role="navigation" aria-label="Menu principal">
             <a href="#start" class="logo-link" aria-label="Retour à l'accueil">
-                <svg width="250" height="80" xmlns="http://www.w3.org/2000/svg" class="logo">
-                    <defs>
-                        <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color: var(--gold);" />
-                            <stop offset="100%" style="stop-color: #DAA520;" />
-                        </linearGradient>
-                        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                            <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
-                            <feMerge>
-                                <feMergeNode in="blur"/>
-                                <feMergeNode in="SourceGraphic"/>
-                            </feMerge>
-                        </filter>
-                    </defs>
-                    <!-- Cercle doré avec le "L" -->
-                    <g transform="translate(10, 10)">
-                        <circle cx="35" cy="35" r="30" fill="none" stroke="url(#goldGradient)" stroke-width="4" filter="url(#glow)"/>
-                        <circle cx="35" cy="35" r="25" fill="#1A1A1A"/>
-                        <text x="25" y="45" font-family="Orbitron, sans-serif" font-size="30" font-weight="700" fill="url(#goldGradient)" filter="url(#glow)">L</text>
-                        <!-- Détails décoratifs autour du cercle -->
-                        <circle cx="35" cy="5" r="3" fill="url(#goldGradient)" filter="url(#glow)"/>
-                        <circle cx="35" cy="65" r="3" fill="url(#goldGradient)" filter="url(#glow)"/>
-                        <circle cx="5" cy="35" r="3" fill="url(#goldGradient)" filter="url(#glow)"/>
-                        <circle cx="65" cy="35" r="3" fill="url(#goldGradient)" filter="url(#glow)"/>
-                    </g>
-                    <!-- Texte "Legatio Finance" à droite -->
-                    <g transform="translate(90, 10)">
-                        <text x="0" y="30" font-family="Orbitron, sans-serif" font-size="24" font-weight="700" fill="url(#goldGradient)" filter="url(#glow)">Legatio</text>
-                        <text x="0" y="50" font-family="Orbitron, sans-serif" font-size="14" font-weight="400" fill="#FFFFFF">Finance</text>
-                    </g>
-                </svg>
+                <span class="logo-text">Legatio Finance</span>
             </a>
             <ul>
                 <li><a href="#start">Accueil</a></li>
