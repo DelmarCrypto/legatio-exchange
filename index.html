@@ -64,7 +64,6 @@
         }
 
         .dark-theme .section,
-        .dark-theme .token-benefit,
         .dark-theme .testimonial,
         .dark-theme .roadmap-item,
         .dark-theme .team-member,
@@ -98,7 +97,6 @@
         }
 
         /* Cards */
-        .token-benefit,
         .testimonial,
         .roadmap-item,
         .team-member,
@@ -106,41 +104,12 @@
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .token-benefit:hover,
         .testimonial:hover,
         .roadmap-item:hover,
         .team-member:hover,
         .token-sale-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 5px 15px rgba(255, 0, 122, 0.3);
-        }
-
-        /* Specific Adjustments for "Pourquoi $LEG" and "Avant, Après" */
-        .token-benefits .token-benefit,
-        .before-after .before,
-        .before-after .after {
-            background: #3A3A3A; /* Lighter background for better visibility */
-            box-shadow: 0 0 15px rgba(255, 0, 122, 0.3); /* Stronger glow */
-            border: 1px solid rgba(255, 0, 122, 0.2); /* Subtle border */
-            border-radius: 12px;
-            padding: 1.5rem;
-        }
-
-        .token-benefits .token-benefit i,
-        .before-after .before h3::before,
-        .before-after .after h3::before {
-            color: #FF99CC; /* Brighter pink for icons */
-            opacity: 1;
-        }
-
-        .token-benefits .token-benefit h3,
-        .token-benefits .token-benefit p,
-        .before-after .before h3,
-        .before-after .after h3,
-        .before-after .before ul li,
-        .before-after .after ul li {
-            color: #FFFFFF; /* Pure white for text */
-            opacity: 1;
         }
 
         /* Navbar */
@@ -264,7 +233,6 @@
         }
 
         /* Grid Layouts */
-        .token-benefits-list,
         .testimonials-container,
         .roadmap-timeline,
         .team-container,
@@ -274,7 +242,6 @@
             gap: 1.5rem;
         }
 
-        .token-benefit,
         .testimonial,
         .roadmap-item,
         .team-member,
@@ -285,7 +252,6 @@
             text-align: center;
         }
 
-        .token-benefit i,
         .why-choose i,
         .how-to-invest i,
         .services i {
@@ -295,7 +261,6 @@
             transition: transform 0.3s;
         }
 
-        .token-benefit i:hover,
         .why-choose i:hover,
         .how-to-invest i:hover,
         .services i:hover {
@@ -371,31 +336,6 @@
         .swap-form button:hover {
             background: var(--hover-dark);
             box-shadow: var(--glow);
-        }
-
-        /* Before and After Section */
-        .before-after {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .before-after .before h3::before,
-        .before-after .after h3::before {
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
-            font-size: 1.5rem;
-            margin-right: 0.5rem;
-            color: var(--accent-pink);
-        }
-
-        .before-after .before h3::before {
-            content: "\f05e"; /* fa-ban (barrier) */
-        }
-
-        .before-after .after h3::before {
-            content: "\f015"; /* fa-home (house) */
         }
 
         /* Hidden Class */
@@ -538,49 +478,6 @@
                 <h2>Bienvenue chez Legatio Finance</h2>
                 <p>Découvrez une plateforme innovante pour investir dans l’immobilier tokenisé avec sécurité et simplicité grâce à la blockchain.</p>
                 <a href="#simulateur-rwa" class="cta-button simulator-cta" aria-label="Essayer le simulateur">Essayer le Simulateur</a>
-            </section>
-
-            <section class="section token-benefits">
-                <h2>Pourquoi $LEG ?</h2>
-                <div class="token-benefits-list">
-                    <article class="token-benefit">
-                        <i class="fas fa-coins"></i>
-                        <h3>Staking</h3>
-                        <p>Générez des rendements passifs jusqu’à 7% par an.</p>
-                    </article>
-                    <article class="token-benefit">
-                        <i class="fas fa-vote-yea"></i>
-                        <h3>Gouvernance</h3>
-                        <p>Participez à la gestion décentralisée de Legatio.</p>
-                    </article>
-                    <article class="token-benefit">
-                        <i class="fas fa-hand-holding-usd"></i>
-                        <h3>Prêts</h3>
-                        <p>Accédez à des prêts sécurisés avec vos actifs.</p>
-                    </article>
-                </div>
-            </section>
-
-            <section class="section before-after">
-                <h2>Avant et Après</h2>
-                <div class="before-after">
-                    <div class="before">
-                        <h3>Avant</h3>
-                        <ul>
-                            <li>Accès limité par les banques.</li>
-                            <li>Capital élevé requis.</li>
-                            <li>Processus lent.</li>
-                        </ul>
-                    </div>
-                    <div class="after">
-                        <h3>Après</h3>
-                        <ul>
-                            <li>Accès via blockchain.</li>
-                            <li>Investissement dès 100$.</li>
-                            <li>Processus rapide.</li>
-                        </ul>
-                    </div>
-                </div>
             </section>
 
             <section class="section why-choose">
