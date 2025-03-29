@@ -19,6 +19,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="main.css">
+    <!-- Données structurées (Schema Markup) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Legatio Finance",
+      "url": "https://delmarcrypto.github.io/legatio.finance/",
+      "logo": "https://delmarcrypto.github.io/legatio.finance/images/og-image.jpg",
+      "description": "Legatio Finance propose des solutions d'investissement dans l'immobilier tokenisé via la blockchain, avec des services DeFi comme le staking et les prêts sécurisés.",
+      "sameAs": [
+        "https://x.com/rdb_legend",
+        "https://discord.com/channels/1347668715357077577/1347668716120182888"
+      ]
+    }
+    </script>
     <style>
         :root {
             --primary: #FF007A;
@@ -367,26 +382,50 @@
             border-radius: 12px;
         }
 
-        .partner-logos span {
+        .partner-logos h2 {
             font-size: 1.8rem;
             font-weight: 700;
-            display: block;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            text-shadow: var(--glow);
+            animation: glow 2s infinite;
         }
 
-        .partner-logos svg {
-            transition: transform 0.3s;
+        .partner-logos-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1.5rem;
+            justify-items: center;
+            align-items: center;
+            padding: 0 1rem;
         }
 
-        .partner-logos svg:hover {
+        .partner-logo {
+            filter: drop-shadow(0 0 5px var(--primary));
+        }
+
+        .partner-logo text {
+            text-shadow: var(--glow);
+        }
+
+        .partner-logo:hover {
             transform: scale(1.1);
         }
 
-        .hidden {
-            display: none;
-        }
-
         @media (max-width: 768px) {
+            .partner-logos-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 1rem;
+            }
+
+            .partner-logo {
+                width: 100px;
+                height: 40px;
+            }
+
+            .partner-logo text {
+                font-size: 14px;
+            }
+
             .navbar ul {
                 flex-direction: column;
                 align-items: center;
@@ -404,6 +443,10 @@
             .token-sale-container {
                 grid-template-columns: 1fr;
             }
+        }
+
+        .hidden {
+            display: none;
         }
     </style>
 </head>
@@ -439,7 +482,7 @@
             </section>
 
             <section class="section token-benefits">
-                <h2>Découvrez la puissance du token $Leg</h2>
+                <h2>Découvrez la puissance du token $LEG</h2>
                 <div class="token-benefits-list">
                     <article class="token-benefit">
                         <i class="fas fa-coins"></i>
@@ -483,6 +526,7 @@
 
             <section class="section why-choose">
                 <h2>Pourquoi Nous Choisir ?</h2>
+                <p>Legatio Finance rend l’investissement immobilier accessible à tous grâce à la tokenisation sur blockchain. Découvrez nos avantages uniques.</p>
                 <div class="token-benefits-list">
                     <article class="token-benefit">
                         <i class="fas fa-door-open"></i>
@@ -630,86 +674,97 @@
                 </div>
             </section>
 
-<section class="section partner-logos">
-    <span>Nos partenaires</span>
-    <div class="partner-logos-grid">
-        <!-- Première rangée : LBank, Link, RealT, Aave, Uniswap, Ledger -->
-        <a href="https://www.lbank.com/" target="_blank" rel="noopener noreferrer" aria-label="Logo LBank">
-            <svg width="120" height="50" xmlns="http://www.w3.org/2000/svg" class="partner-logo">
-                <defs>
-                    <linearGradient id="lbankGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color: var(--primary);" />
-                        <stop offset="100%" style="stop-color: var(--accent-pink);" />
-                    </linearGradient>
-                </defs>
-                <rect x="5" y="5" width="110" height="40" rx="10" fill="none" stroke="url(#lbankGradient)" stroke-width="2"/>
-                <text x="15" y="35" font-family="Orbitron, sans-serif" font-size="20" fill="url(#lbankGradient)" text-shadow="var(--glow)">LBank</text>
-                <circle cx="100" cy="25" r="5" fill="var(--primary)" filter="drop-shadow(0 0 5px var(--primary))"/>
-            </svg>
-        </a>
-        <a href="https://chain.link/" target="_blank" rel="noopener noreferrer" aria-label="Logo Link">
-            <svg width="120" height="50" xmlns="http://www.w3.org/2000/svg" class="partner-logo">
-                <defs>
-                    <linearGradient id="chainlinkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color: var(--primary);" />
-                        <stop offset="100%" style="stop-color: var(--accent-pink);" />
-                    </linearGradient>
-                </defs>
-                <polygon points="15,15 35,5 55,15 55,35 35,45 15,35" fill="none" stroke="url(#chainlinkGradient)" stroke-width="3" filter="drop-shadow(0 0 5px var(--primary))"/>
-                <text x="65" y="35" font-family="Orbitron, sans-serif" font-size="18" fill="url(#chainlinkGradient)" text-shadow="var(--glow)">Link</text>
-            </svg>
-        </a>
-        <a href="https://realt.co/" target="_blank" rel="noopener noreferrer" aria-label="Logo RealT">
-            <svg width="120" height="50" xmlns="http://www.w3.org/2000/svg" class="partner-logo">
-                <defs>
-                    <linearGradient id="realtGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color: var(--primary);" />
-                        <stop offset="100%" style="stop-color: var(--accent-pink);" />
-                    </linearGradient>
-                </defs>
-                <rect x="10" y="10" width="40" height="30" fill="none" stroke="url(#realtGradient)" stroke-width="2" filter="drop-shadow(0 0 5px var(--primary))"/>
-                <text x="60" y="35" font-family="Orbitron, sans-serif" font-size="18" fill="url(#realtGradient)" text-shadow="var(--glow)">RealT</text>
-            </svg>
-        </a>
-        <a href="https://aave.com/" target="_blank" rel="noopener noreferrer" aria-label="Logo Aave">
-            <svg width="120" height="50" xmlns="http://www.w3.org/2000/svg" class="partner-logo">
-                <defs>
-                    <linearGradient id="aaveGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color: var(--primary);" />
-                        <stop offset="100%" style="stop-color: var(--accent-pink);" />
-                    </linearGradient>
-                </defs>
-                <circle cx="30" cy="25" r="15" fill="none" stroke="url(#aaveGradient)" stroke-width="3" filter="drop-shadow(0 0 5px var(--primary))"/>
-                <text x="55" y="35" font-family="Orbitron, sans-serif" font-size="18" fill="url(#aaveGradient)" text-shadow="var(--glow)">Aave</text>
-            </svg>
-        </a>
-        <a href="https://uniswap.org/" target="_blank" rel="noopener noreferrer" aria-label="Logo Uniswap">
-            <svg width="120" height="50" xmlns="http://www.w3.org/2000/svg" class="partner-logo">
-                <defs>
-                    <linearGradient id="uniswapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color: var(--primary);" />
-                        <stop offset="100%" style="stop-color: var(--accent-pink);" />
-                    </linearGradient>
-                </defs>
-                <path d="M20 25 Q30 10 40 25 Q30 40 20 25" fill="none" stroke="url(#uniswapGradient)" stroke-width="3" filter="drop-shadow(0 0 5px var(--primary))"/>
-                <text x="50" y="35" font-family="Orbitron, sans-serif" font-size="16" fill="url(#uniswapGradient)" text-shadow="var(--glow)">Uniswap</text>
-            </svg>
-        </a>
-        <a href="https://www.ledger.com/" target="_blank" rel="noopener noreferrer" aria-label="Logo Ledger">
-            <svg width="120" height="50" xmlns="http://www.w3.org/2000/svg" class="partner-logo">
-                <defs>
-                    <linearGradient id="ledgerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color: var(--primary);" />
-                        <stop offset="100%" style="stop-color: var(--accent-pink);" />
-                    </linearGradient>
-                </defs>
-                <rect x="15" y="15" width="30" height="20" fill="none" stroke="url(#ledgerGradient)" stroke-width="2" filter="drop-shadow(0 0 5px var(--primary))"/>
-                <text x="55" y="35" font-family="Orbitron, sans-serif" font-size="16" fill="url(#ledgerGradient)" text-shadow="var(--glow)">Ledger</text>
-            </svg>
-        </a>
-    </div>
-</section>
-  
+            <section class="section partner-logos">
+                <h2>Nos partenaires</h2>
+                <div class="partner-logos-grid">
+                    <!-- LBank -->
+                    <a href="https://www.lbank.com/" target="_blank" rel="noopener noreferrer" aria-label="Logo LBank">
+                        <svg width="120" height="50" xmlns="http://www.w3.org/2000/svg" class="partner-logo">
+                            <title>Logo de LBank, partenaire de Legatio Finance</title>
+                            <defs>
+                                <linearGradient id="lbankGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color: var(--primary);" />
+                                    <stop offset="100%" style="stop-color: var(--accent-pink);" />
+                                </linearGradient>
+                            </defs>
+                            <rect x="5" y="5" width="110" height="40" rx="10" fill="none" stroke="url(#lbankGradient)" stroke-width="2"/>
+                            <text x="15" y="35" font-family="Orbitron, sans-serif" font-size="20" fill="url(#lbankGradient)">LBank</text>
+                            <circle cx="100" cy="25" r="5" fill="var(--primary)"/>
+                        </svg>
+                    </a>
+                    <!-- Link -->
+                    <a href="https://chain.link/" target="_blank" rel="noopener noreferrer" aria-label="Logo Link">
+                        <svg width="120" height="50" xmlns="http://www.w3.org/2000/svg" class="partner-logo">
+                            <title>Logo de Link, partenaire de Legatio Finance</title>
+                            <defs>
+                                <linearGradient id="chainlinkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color: var(--primary);" />
+                                    <stop offset="100%" style="stop-color: var(--accent-pink);" />
+                                </linearGradient>
+                            </defs>
+                            <polygon points="15,15 35,5 55,15 55,35 35,45 15,35" fill="none" stroke="url(#chainlinkGradient)" stroke-width="3"/>
+                            <text x="65" y="35" font-family="Orbitron, sans-serif" font-size="18" fill="url(#chainlinkGradient)">Link</text>
+                        </svg>
+                    </a>
+                    <!-- RealT -->
+                    <a href="https://realt.co/" target="_blank" rel="noopener noreferrer" aria-label="Logo RealT">
+                        <svg width="120" height="50" xmlns="http://www.w3.org/2000/svg" class="partner-logo">
+                            <title>Logo de RealT, partenaire de Legatio Finance</title>
+                            <defs>
+                                <linearGradient id="realtGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color: var(--primary);" />
+                                    <stop offset="100%" style="stop-color: var(--accent-pink);" />
+                                </linearGradient>
+                            </defs>
+                            <rect x="10" y="10" width="40" height="30" fill="none" stroke="url(#realtGradient)" stroke-width="2"/>
+                            <text x="60" y="35" font-family="Orbitron, sans-serif" font-size="18" fill="url(#realtGradient)">RealT</text>
+                        </svg>
+                    </a>
+                    <!-- Aave -->
+                    <a href="https://aave.com/" target="_blank" rel="noopener noreferrer" aria-label="Logo Aave">
+                        <svg width="120" height="50" xmlns="http://www.w3.org/2000/svg" class="partner-logo">
+                            <title>Logo de Aave, partenaire de Legatio Finance</title>
+                            <defs>
+                                <linearGradient id="aaveGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color: var(--primary);" />
+                                    <stop offset="100%" style="stop-color: var(--accent-pink);" />
+                                </linearGradient>
+                            </defs>
+                            <circle cx="30" cy="25" r="15" fill="none" stroke="url(#aaveGradient)" stroke-width="3"/>
+                            <text x="55" y="35" font-family="Orbitron, sans-serif" font-size="18" fill="url(#aaveGradient)">Aave</text>
+                        </svg>
+                    </a>
+                    <!-- Uniswap -->
+                    <a href="https://uniswap.org/" target="_blank" rel="noopener noreferrer" aria-label="Logo Uniswap">
+                        <svg width="120" height="50" xmlns="http://www.w3.org/2000/svg" class="partner-logo">
+                            <title>Logo de Uniswap, partenaire de Legatio Finance</title>
+                            <defs>
+                                <linearGradient id="uniswapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color: var(--primary);" />
+                                    <stop offset="100%" style="stop-color: var(--accent-pink);" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M20 25 Q30 10 40 25 Q30 40 20 25" fill="none" stroke="url(#uniswapGradient)" stroke-width="3"/>
+                            <text x="50" y="35" font-family="Orbitron, sans-serif" font-size="16" fill="url(#uniswapGradient)">Uniswap</text>
+                        </svg>
+                    </a>
+                    <!-- Ledger -->
+                    <a href="https://www.ledger.com/" target="_blank" rel="noopener noreferrer" aria-label="Logo Ledger">
+                        <svg width="120" height="50" xmlns="http://www.w3.org/2000/svg" class="partner-logo">
+                            <title>Logo de Ledger, partenaire de Legatio Finance</title>
+                            <defs>
+                                <linearGradient id="ledgerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color: var(--primary);" />
+                                    <stop offset="100%" style="stop-color: var(--accent-pink);" />
+                                </linearGradient>
+                            </defs>
+                            <rect x="15" y="15" width="30" height="20" fill="none" stroke="url(#ledgerGradient)" stroke-width="2"/>
+                            <text x="55" y="35" font-family="Orbitron, sans-serif" font-size="16" fill="url(#ledgerGradient)">Ledger</text>
+                        </svg>
+                    </a>
+                </div>
+            </section>
+
             <section class="section crypto-prices" style="text-align: center; padding: 1.5rem; background: #1A1A1A; border-radius: 12px;">
                 <h2>Prix en Direct</h2>
                 <p id="btcPrice">Bitcoin: Chargement...</p>
@@ -719,7 +774,7 @@
 
             <section class="section" id="simulateur-rwa">
                 <h2>Simulateur de Prêt RWA</h2>
-                <p>Calculez votre prêt en fonction de vos actifs tokenisés.</p>
+                <p>Calculez votre prêt en fonction de vos actifs tokenisés. <a href="#how-to-invest">En savoir plus sur les prêts RWA</a>.</p>
                 <form class="simulator-form">
                     <button type="button" id="connect-metamask" class="cta-button">Connecter MetaMask <span id="loading-spinner" class="hidden">⏳</span></button>
                     <p id="wallet-address" class="hidden">Adresse connectée : Aucune</p>
