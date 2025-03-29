@@ -46,8 +46,6 @@
             --hover-dark: #FF4DA6;
             --accent-pink: #FF66B2;
             --glow: 0 0 10px #FF007A, 0 0 20px #FF007A, 0 0 30px #FF66B2;
-            --light-bg: #F5F5F5;
-            --light-text: #1A1A1A;
             --success: #28a745;
             --warning: #dc3545;
         }
@@ -65,42 +63,6 @@
             position: relative;
             overflow-x: hidden;
             line-height: 1.6;
-            transition: background 0.3s, color 0.3s;
-        }
-
-        body.light-theme {
-            background: var(--light-bg);
-            color: var(--light-text);
-        }
-
-        body.light-theme .navbar,
-        body.light-theme .footer {
-            background: rgba(255, 255, 255, 0.9);
-            border-color: rgba(0, 0, 0, 0.1);
-        }
-
-        body.light-theme .token-benefit,
-        body.light-theme .testimonial,
-        body.light-theme .roadmap-item,
-        body.light-theme .team-member,
-        body.light-theme .token-sale-item,
-        body.light-theme .simulator-form,
-        body.light-theme .swap-form,
-        body.light-theme .crypto-prices,
-        body.light-theme .partner-logos {
-            background: #FFFFFF;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        body.light-theme .cta-button {
-            background: #FFFFFF;
-            color: var(--primary);
-            border: 1px solid var(--primary);
-        }
-
-        body.light-theme .cta-button:hover {
-            background: var(--hover-dark);
-            color: var(--text);
         }
 
         body::before {
@@ -122,7 +84,6 @@
             top: 0;
             z-index: 1000;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            transition: background 0.3s;
         }
 
         .navbar .container {
@@ -418,7 +379,6 @@
             padding: 1.5rem;
             text-align: center;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            transition: background 0.3s;
         }
 
         .social-links a {
@@ -584,7 +544,6 @@
                 <li><a href="#investors">Investisseurs</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#team">Équipe</a></li>
-                <li><button id="theme-toggle" aria-label="Basculer le thème"><i class="fas fa-sun"></i></button></li>
             </ul>
         </nav>
     </header>
@@ -593,7 +552,7 @@
         <section class="header" id="start">
             <div class="header-content">
                 <h1>Legatio Finance</h1>
-                <p class="catchphrase">Le futur de la finance décentralisée des RWA</p>
+                <p class="catchphrase">Le futur des prêts adossés à des actifs réels grâce à la blockchain. </p>
                 <a href="#start" class="cta-button" aria-label="Découvrir les offres">Découvrir Maintenant</a>
             </div>
         </section>
@@ -601,7 +560,7 @@
         <div class="container">
             <section class="section start-section">
                 <h2>Bienvenue chez Legatio</h2>
-                <p>Découvrez une plateforme innovante pour investir dans l’immobilier tokenisé avec sécurité et simplicité grâce à la blockchain.</p>
+                <p>Une plateforme innovante pour investir dans l’immobilier tokenisé avec sécurité et simplicité grâce à la blockchain.</p>
                 <a href="#simulateur-rwa" class="cta-button simulator-cta" aria-label="Essayer le simulateur">Essayer le Simulateur</a>
             </section>
 
@@ -1265,13 +1224,6 @@
 
             document.getElementById('connect-metamask').addEventListener('click', connectMetaMask);
             document.getElementById('collateral-type').addEventListener('change', updatePriceDisplay);
-
-            document.getElementById('theme-toggle').addEventListener('click', () => {
-                document.body.classList.toggle('light-theme');
-                const icon = document.querySelector('#theme-toggle i');
-                icon.classList.toggle('fa-sun');
-                icon.classList.toggle('fa-moon');
-            });
 
             document.querySelector('.back-to-top').addEventListener('click', (e) => {
                 e.preventDefault();
