@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="description" content="Investissez dans l’immobilier tokenisé et les RWA dès 100$ avec Legatio Finance. Rendements passifs via NFTs et staking en 2025.">
+    <meta name="keywords" content="immobilier tokenisé, RWA, NFTs immobiliers, staking LEG, prêts crypto, blockchain, Legatio Finance, finance décentralisée">
+    <meta name="author" content="Legatio Finance Team">
+    <meta property="og:title" content="Legatio Finance - Immobilier Tokenisé dès 100$">
+    <meta property="og:description" content="Investissez dans l’immobilier tokenisé avec des rendements passifs via NFTs et staking sur Legatio Finance.">
+    <meta property="og:image" content="https://delmarcrypto.github.io/legatio.finance/images/og-image.jpg">
+    <meta property="og:url" content="https://delmarcrypto.github.io/legatio.finance/">
+    <meta property="og:type" content="website">
+    <title>Legatio Finance - Immobilier Tokenisé & RWA dès 100$</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="main.css">
+    <style>
+        :root {
+            --primary: #FF007A; /* Uniswap purple from the screenshot */
+            --background: #000000; /* Black background */
+            --text: #FFFFFF; /* White text */
+            --button-bg: #1A1A1A; /* Dark button background */
+            --button-text: #FF007A; /* Purple button text */
+            --hover-dark: #FF4DA6; /* Lighter purple for hover */
+            --accent-pink: #FF66B2; /* More pinkish tone for accents */
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--background);
+            color: var(--text);
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .dark-theme {
+            background: var(--background);
+            color: var(--text);
+        }
+
+        .dark-theme .section,
+        .dark-theme .token-benefit,
+        .dark-theme .testimonial,
+        .dark-theme .roadmap-item,
+        .dark-theme .team-member,
+        .dark-theme .simulator-form {
+            background: #1A1A1A;
+        }
+
+        /* Starry Background */
+        .starry-background {
+            position: relative;
+            background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat, linear-gradient(135deg, #000000 0%, #1A1A1A 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .starry-background::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 0, 122, 0.2) 0%, transparent 70%);
+            opacity: 0.3;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: var(--background);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .navbar .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 2rem;
+        }
+
+        .navbar a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: var(--primary);
+        }
+
+        .navbar button {
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #000000 0%, #1A1A1A 100%);
+            padding: 4rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 0, 122, 0.2) 0%, transparent 70%);
+            opacity: 0.5;
+        }
+
+        .header-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 0;
+        }
+
+        .header-content .catchphrase {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin: 1rem 0;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Section */
+        .section {
+            padding: 2rem 0;
+        }
+
+        /* Buttons */
+        .cta-button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: var(--button-bg);
+            color: var(--button-text);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .cta-button:hover {
+            background: var(--hover-dark);
+            transform: scale(1.05);
+        }
+
+        .simulator-cta {
+            background: var(--button-bg);
+            border: 2px solid var(--primary);
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            color: var(--button-text);
+        }
+
+        .simulator-cta:hover {
+            background: var(--hover-dark);
+            border-color: var(--hover-dark);
+        }
+
+        /* Grid Layouts */
+        .token-benefits-list,
+        .testimonials-container,
+        .roadmap-timeline,
+        .team-container,
+        .token-sale-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .token-benefit,
+        .testimonial,
+        .roadmap-item,
+        .team-member,
+        .token-sale-item {
+            background: #1A1A1A;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .token-benefit i,
+        .why-choose i,
+        .how-to-invest i,
+        .services i {
+            font-size: 2.5rem;
+            color: var(--accent-pink);
+            margin-bottom: 0.5rem;
+            transition: transform 0.3s;
+        }
+
+        .token-benefit i:hover,
+        .why-choose i:hover,
+        .how-to-invest i:hover,
+        .services i:hover {
+            transform: scale(1.1);
+        }
+
+        .roadmap-item {
+            text-align: left;
+            border-left: 4px solid var(--primary);
+            border-radius: 0 12px 12px 0;
+        }
+
+        /* Simulator Form */
+        .simulator-form {
+            background: #1A1A1A;
+            padding: 1.5rem;
+            border-radius: 12px;
+            max-width: 500px;
+            margin: 1rem auto;
+        }
+
+        .simulator-form label {
+            display: block;
+            margin: 0.5rem 0 0.2rem;
+            font-weight: bold;
+        }
+
+        .simulator-form input,
+        .simulator-form select {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background: #2A2A2A;
+            color: var(--text);
+        }
+
+        /* Swap Form */
+        .swap-form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 1.5rem;
+            background: #1A1A1A;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .swap-form input {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background: #2A2A2A;
+            color: var(--text);
+            font-size: 1rem;
+        }
+
+        .swap-form button {
+            width: 100%;
+            padding: 0.8rem;
+            background: var(--button-bg);
+            color: var(--button-text);
+            border: none;
+            border-radius: 25px;
+            font-weight: 500;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .swap-form button:hover {
+            background: var(--hover-dark);
+        }
+
+        /* Before and After Section */
+        .before-after {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .before-after .before h3::before,
+        .before-after .after h3::before {
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+        }
+
+        .before-after .before h3::before {
+            content: "😢";
+        }
+
+        .before-after .after h3::before {
+            content: "😊";
+        }
+
+        /* Hidden Class */
+        .hidden {
+            display: none;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--background);
+            color: var(--text);
+            padding: 1.5rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .social-links a {
+            color: var(--text);
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--primary);
+        }
+
+        .back-to-top {
+            color: var(--primary);
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-content {
+            background: #1A1A1A;
+            margin: 15% auto;
+            padding: 2rem;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 12px;
+            color: var(--text);
+        }
+
+        .close-modal {
+            float: right;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text);
+        }
+
+        /* Form Inputs in Modal and Subscribe Form */
+        #subscribe-form input,
+        #demo-form input,
+        #demo-form textarea {
+            padding: 0.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background: #2A2A2A;
+            color: var(--text);
+            width: 100%;
+        }
+
+        #subscribe-form {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        #subscribe-form input {
+            width: 250px;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <nav class="container" role="navigation" aria-label="Menu principal">
+            <div class="logo">Legatio Finance</div>
+            <ul>
+                <li><a href="#start">Accueil</a></li>
+                <li><a href="#how-to-invest">Solutions</a></li>
+                <li><a href="#investors">Investisseurs</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#team">Équipe</a></li>
+                <li><button id="theme-toggle" aria-label="Basculer le thème"><i class="fas fa-sun"></i></button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="header" id="start">
+            <div class="header-content">
+                <h1>Legatio Finance</h1>
+                <p class="catchphrase">Finance décentralisée pour les actifs réels</p>
+                <a href="#start" class="cta-button" aria-label="Découvrir les offres">Découvrir Maintenant</a>
+            </div>
+        </section>
+
+        <div class="container">
+            <section class="section start-section">
+                <h2>Bienvenue chez Legatio Finance</h2>
+                <p>Découvrez une plateforme innovante pour investir dans l’immobilier tokenisé avec sécurité et simplicité grâce à la blockchain.</p>
+                <a href="#simulateur-rwa" class="cta-button simulator-cta" aria-label="Essayer le simulateur">Essayer le Simulateur</a>
+            </section>
+
+            <section class="section token-benefits">
+                <h2>Pourquoi $LEG ?</h2>
+                <div class="token-benefits-list">
+                    <article class="token-benefit">
+                        <i class="fas fa-coins"></i>
+                        <h3>Staking</h3>
+                        <p>Générez des rendements passifs jusqu’à 7% par an.</p>
+                    </article>
+                    <article class="token-benefit">
+                        <i class="fas fa-vote-yea"></i>
+                        <h3>Gouvernance</h3>
+                        <p>Participez à la gestion décentralisée de Legatio.</p>
+                    </article>
+                    <article class="token-benefit">
+                        <i class="fas fa-hand-holding-usd"></i>
+                        <h3>Prêts</h3>
+                        <p>Accédez à des prêts sécurisés avec vos actifs.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section before-after starry-background">
+                <h2>Avant et Après</h2>
+                <div class="before-after">
+                    <div class="before">
+                        <h3>Avant</h3>
+                        <ul>
+                            <li>Accès limité par les banques.</li>
+                            <li>Capital élevé requis.</li>
+                            <li>Processus lent.</li>
+                        </ul>
+                    </div>
+                    <div class="after">
+                        <h3>Après</h3>
+                        <ul>
+                            <li>Accès via blockchain.</li>
+                            <li>Investissement dès 100$.</li>
+                            <li>Processus rapide.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section why-choose starry-background">
+                <h2>Pourquoi Nous Choisir ?</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                    <div style="text-align: center;">
+                        <i class="fas fa-door-open fa-2x"></i>
+                        <h3>Accessibilité</h3>
+                        <p>Investissez dès 100$ avec NFTs.</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <i class="fas fa-chart-line fa-2x"></i>
+                        <h3>Rendements</h3>
+                        <p>5-7% par an via staking.</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <i class="fas fa-shield-alt fa-2x"></i>
+                        <h3>Sécurité</h3>
+                        <p>Audits CertiK et KYC/AML.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section how-to-invest starry-background" id="how-to-invest">
+                <h2>Comment Investir dans l’Immobilier Tokenisé ?</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                    <article style="text-align: center;">
+                        <i class="fas fa-wallet fa-2x"></i>
+                        <h3>1. Connectez</h3>
+                        <p>Utilisez MetaMask.</p>
+                    </article>
+                    <article style="text-align: center;">
+                        <i class="fas fa-building fa-2x"></i>
+                        <h3>2. Achetez</h3>
+                        <p>Parts d’immeubles NFTs.</p>
+                    </article>
+                    <article style="text-align: center;">
+                        <i class="fas fa-coins fa-2x"></i>
+                        <h3>3. Gagnez</h3>
+                        <p>Stakez pour des rendements.</p>
+                    </article>
+                </div>
+                <a href="#simulateur-rwa" class="cta-button">Démarrez avec MetaMask</a>
+            </section>
+
+            <section class="section services starry-background">
+                <h2>Nos Solutions d’Investissement</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                    <article style="text-align: center;">
+                        <i class="fas fa-gem fa-2x"></i>
+                        <h3>NFTs Immobiliers</h3>
+                        <p>À partir de 100$ par part.</p>
+                    </article>
+                    <article style="text-align: center;">
+                        <i class="fas fa-coins fa-2x"></i>
+                        <h3>Staking LEG</h3>
+                        <p>Rendements de 5% annuel.</p>
+                    </article>
+                    <article style="text-align: center;">
+                        <i class="fas fa-hand-holding-usd fa-2x"></i>
+                        <h3>Prêts Crypto</h3>
+                        <p>Emprunts sécurisés.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section token-sale">
+                <h2>Vente de Tokens</h2>
+                <div class="token-sale-container">
+                    <article class="token-sale-item">
+                        <h3>Token LEG</h3>
+                        <p><strong>$LEG</strong> est le cœur de l’écosystème Legatio.</p>
+                        <ul>
+                            <li>D’accéder à des prêts sécurisés.</li>
+                            <li>Générez 5-7% via staking.</li>
+                            <li>Participez à la gouvernance.</li>
+                        </ul>
+                        <p><strong>Tokenomics :</strong> Total Supply : 1B LEG</p>
+                        <a href="#investors" class="cta-button">Investir Maintenant</a>
+                    </article>
+                    <article class="token-sale-item">
+                        <h3>NFTs Legatio</h3>
+                        <p><strong>"Legatio Genesis"</strong> : 10,000 NFTs sur Arbitrum.</p>
+                        <p>Prix : 0.2 ETH | Lancement : Q3 2025</p>
+                        <a href="#opportunites" class="cta-button">Voir les Opportunités</a>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section swap">
+                <h2>Acheter du $LEG</h2>
+                <div class="swap-form">
+                    <input type="number" id="swap-amount" placeholder="Montant en ETH">
+                    <button onclick="swapLEG()" class="cta-button">Échanger</button>
+                    <p id="swap-result"></p>
+                </div>
+            </section>
+
+            <section class="section testimonials">
+                <h2>Ce que Nos Utilisateurs Disent</h2>
+                <div class="testimonials-container">
+                    <article class="testimonial">
+                        <p>"Legatio m’a permis d’investir dans l’immobilier avec 100$."</p>
+                        <p style="font-style: italic; color: #AAAAAA;">- Jean, Investisseur</p>
+                    </article>
+                    <article class="testimonial">
+                        <p>"Les rendements de staking sont impressionnants."</p>
+                        <p style="font-style: italic; color: #AAAAAA;">- Marie, Débutante</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section roadmap">
+                <h2>Roadmap 2025</h2>
+                <div class="roadmap-timeline">
+                    <article class="roadmap-item">
+                        <h3>Q1 2025</h3>
+                        <p>Lancement de la plateforme et premier NFT immobilier.</p>
+                    </article>
+                    <article class="roadmap-item">
+                        <h3>Q2 2025</h3>
+                        <p>Intégration des prêts RWA et staking $LEG.</p>
+                    </article>
+                    <article class="roadmap-item">
+                        <h3>Q3 2025</h3>
+                        <p>Lancement de "Legatio Genesis" et expansion internationale.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section team" id="team">
+                <h2>Notre Équipe</h2>
+                <div class="team-container">
+                    <article class="team-member">
+                        <h3>Rodrigues Delmar</h3>
+                        <p>Co-fondateur & CEO</p>
+                        <p>Expert en trading crypto et blockchain.</p>
+                    </article>
+                    <article class="team-member">
+                        <h3>Alexandre Perez</h3>
+                        <p>CTO</p>
+                        <p>Ingénieur blockchain spécialisé en smart contracts.</p>
+                    </article>
+                    <article class="team-member">
+                        <h3>Marie Balsan</h3>
+                        <p>COO</p>
+                        <p>Experte en régulation et conformité crypto.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section partner-logos" style="text-align: center; padding: 2rem 0; background: #1A1A1A; border-radius: 12px;">
+                <span style="font-size: 1.8rem; font-weight: 700; color: var(--text); display: block; margin-bottom: 1rem;">Nos partenaires</span>
+                <a href="https://www.lbank.com/" target="_blank" aria-label="LBank"><svg width="150" height="50" xmlns="http://www.w3.org/2000/svg"><text x="10" y="35" font-size="20" fill="#0A66C2">LBank</text></svg></a>
+                <a href="https://chain.link/" target="_blank" aria-label="Chainlink"><svg width="150" height="50" xmlns="http://www.w3.org/2000/svg"><text x="10" y="35" font-size="20" fill="#375BD2">Chainlink</text></svg></a>
+            </section>
+
+            <section class="section crypto-prices" style="text-align: center; padding: 1.5rem; background: #1A1A1A; border-radius: 12px;">
+                <h2>Prix en Direct</h2>
+                <p id="btcPrice">Bitcoin: Chargement...</p>
+                <p id="goldPrice">Or: Chargement...</p>
+                <p id="silverPrice">Argent: Chargement...</p>
+            </section>
+
+            <section class="section" id="simulateur-rwa">
+                <h2>Simulateur de Prêt RWA</h2>
+                <p>Calculez votre prêt en fonction de vos actifs tokenisés.</p>
+                <form class="simulator-form">
+                    <button type="button" id="connect-metamask" class="cta-button">Connecter MetaMask <span id="loading-spinner" class="hidden">⏳</span></button>
+                    <p id="wallet-address" class="hidden">Adresse connectée : Aucune</p>
+                    <p id="network-status" class="hidden" style="color: #e74c3c;"></p>
+                    <p id="error-message" class="hidden" style="color: #e74c3c;"></p>
+                    <label for="collateral-type">Type de Collatéral :</label>
+                    <select id="collateral-type" aria-label="Type de collatéral">
+                        <option value="bitcoin">Bitcoin</option>
+                        <option value="pax-gold">Or (PAXG)</option>
+                        <option value="silver-token-xagx">Argent (XAGX)</option>
+                        <option value="immobilier">Immobilier</option>
+                    </select>
+                    <label for="collateral-amount">Valeur du Collatéral (unités) :</label>
+                    <input type="number" id="collateral-amount" placeholder="Ex: 2 BTC" aria-label="Montant du collatéral" required>
+                    <p>Prix actuel : <span id="collateral-price">$0</span></p>
+                    <label for="loan-duration">Durée du Prêt (mois) :</label>
+                    <input type="number" id="loan-duration" placeholder="Ex: 12" aria-label="Durée du prêt" required>
+                    <label for="interest-rate">Taux d’Intérêt Annuel (%) :</label>
+                    <input type="number" id="interest-rate" placeholder="Ex: 5" aria-label="Taux d’intérêt" required>
+                    <p>Ratio LTV : <span id="ltv-value">0%</span></p>
+                    <button type="button" onclick="calculateLoan()" class="cta-button">Calculer</button>
+                    <div id="loan-results" role="region" aria-live="polite"></div>
+                    <button type="button" onclick="requestLoan()" class="cta-button hidden" id="loan-request-btn">Demander un prêt</button>
+                </form>
+            </section>
+
+            <section class="section about">
+                <h2>À Propos de Legatio Finance</h2>
+                <p>Legatio Finance est une plateforme pionnière dans la tokenisation immobilière, offrant des solutions accessibles et sécurisées grâce à la blockchain.</p>
+            </section>
+
+            <section class="section faq" id="faq">
+                <h2>Questions Fréquentes</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+                    <article>
+                        <h3>Comment acheter un NFT immobilier ?</h3>
+                        <p>Connectez MetaMask, sélectionnez un NFT "Legatio Genesis", payez en stablecoins ou ETH.</p>
+                    </article>
+                    <article>
+                        <h3>Quels sont les risques ?</h3>
+                        <p>Variations du marché possibles, mais audits CertiK minimisent les risques opérationnels.</p>
+                    </article>
+                    <article>
+                        <h3>Comment retirer mes gains ?</h3>
+                        <p>Utilisez notre DApp pour retirer en stablecoins ou ETH via MetaMask.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section learn">
+                <h2>Apprenez l’Immobilier Tokenisé</h2>
+                <p><a href="#faq">Qu’est-ce qu’un NFT immobilier ?</a> | <a href="#how-to-invest">Comment investir avec Legatio ?</a></p>
+            </section>
+
+            <section class="section news">
+                <h2>Actualités & Éducation</h2>
+                <p><a href="https://forms.zoho.eu/legatiofinancegm1/form/FormationLegatio" target="_blank">Comment sécuriser ses cryptomonnaies ?</a></p>
+                <p><a href="https://forms.zoho.eu/legatiofinancegm1/form/FormationLegatio" class="cta-button" target="_blank">Acheter Notre Formation</a></p>
+            </section>
+
+            <section class="section investors" id="investors">
+                <h2>Pour les Investisseurs</h2>
+                <p>Explorez notre vision pour la finance décentralisée.</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="./PitchDeck.pdf" class="cta-button" target="_blank">Pitch Deck</a>
+                    <a href="./WhitePaper.pdf" class="cta-button" target="_blank">White Paper</a>
+                    <a href="#" class="cta-button" id="open-demo-modal">Demander une Démo</a>
+                </div>
+            </section>
+
+            <section class="section stay-informed">
+                <h2>Rejoignez la Révolution</h2>
+                <p>Inscrivez-vous pour des mises à jour exclusives.</p>
+                <form id="subscribe-form" action="https://formspree.io/f/mpwpavjj" method="POST" style="display: flex; gap: 0.5rem; justify-content: center;">
+                    <input type="email" name="email" placeholder="Votre email" required aria-label="Email pour inscription" style="padding: 0.5rem; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; width: 250px; background: #2A2A2A; color: var(--text);">
+                    <button type="submit" class="cta-button">S’inscrire</button>
+                </form>
+                <p id="subscribe-message" class="hidden"></p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://x.com/rdb_legend" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://discord.com/channels/1347668715357077577/1347668716120182888" target="_blank" aria-label="Discord"><i class="fab fa-discord"></i></a>
+            </div>
+            <div class="footer-links">
+                <a href="#faq">FAQ</a> | <a href="#privacy">Confidentialité</a> | <a href="#terms">Conditions</a>
+            </div>
+            <p>Contact : <a href="mailto:legatio.finance@gmail.com">legatio.finance@gmail.com</a> | © 2025 Legatio Finance</p>
+            <a href="#" class="back-to-top" aria-label="Retour en haut">↑</a>
+        </div>
+    </footer>
+
+    <div id="demo-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-demo-modal">×</span>
+            <h2>Demander une Démo</h2>
+            <p>Remplissez le formulaire pour planifier une démo.</p>
+            <div id="form-message" class="hidden"></div>
+            <form id="demo-form" action="https://formspree.io/f/mpwpavjj" method="POST">
+                <div style="margin-bottom: 1rem;">
+                    <label for="name">Nom :</label>
+                    <input type="text" id="name" name="name" required placeholder="Votre nom" style="width: 100%; padding: 0.5rem; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; background: #2A2A2A; color: var(--text);">
+                </div>
+                <div style="margin-bottom: 1rem;">
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email" required placeholder="Votre email" style="width: 100%; padding: 0.5rem; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; background: #2A2A2A; color: var(--text);">
+                </div>
+                <div style="margin-bottom: 1rem;">
+                    <label for="message">Message (optionnel) :</label>
+                    <textarea id="message" name="message" placeholder="Dites-nous en plus..." style="width: 100%; padding: 0.5rem; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; background: #2A2A2A; color: var(--text);"></textarea>
+                </div>
+                <button type="submit" class="cta-button">Envoyer</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.ethers.io/lib/ethers-5.7.2.umd.min.js" defer></script>
+    <script>
+        const contractAddress = "0x1234abcd..."; // Remplace par l'adresse réelle
+        const contractABI = [
+            {
+                "inputs": [{"internalType": "address", "name": "_jetonCollatéral", "type": "address"}, {"internalType": "uint256", "name": "_montantCollatéral", "type": "uint256"}, {"internalType": "uint256", "name": "_montant", "type": "uint256"}],
+                "name": "ouvrirPret",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [{"internalType": "address", "name": "_utilisateur", "type": "address"}],
+                "name": "ajouterUtilisateurKYC",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [{"internalType": "address", "name": "", "type": "address"}],
+                "name": "utilisateursKYC",
+                "outputs": [{"internalType": "bool", "name": "", "type": "bool"}],
+                "stateMutability": "view",
+                "type": "function"
+            }
+        ];
+
+        let provider, signer, contract, userAddress;
+        let livePrices = { bitcoin: 0, 'pax-gold': 0, 'silver-token-xagx': 0, immobilier: 1000 };
+
+        async function fetchLivePrices() {
+            try {
+                const res = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,pax-gold,silver-token-xagx&vs_currencies=usd');
+                const data = await res.json();
+                livePrices.bitcoin = data.bitcoin?.usd || 0;
+                livePrices['pax-gold'] = data['pax-gold']?.usd || 0;
+                livePrices['silver-token-xagx'] = data['silver-token-xagx']?.usd || 0;
+                updatePriceDisplay();
+            } catch (e) {
+                console.error('Erreur prix:', e);
+                document.getElementById('btcPrice').textContent = 'Bitcoin: Indisponible';
+                document.getElementById('goldPrice').textContent = 'Or: Indisponible';
+                document.getElementById('silverPrice').textContent = 'Argent: Indisponible';
+            }
+        }
+
+        function updatePriceDisplay() {
+            document.getElementById('btcPrice').textContent = `Bitcoin: $${livePrices.bitcoin.toLocaleString('fr-FR')}`;
+            document.getElementById('goldPrice').textContent = `Or: $${livePrices['pax-gold'].toLocaleString('fr-FR')} / oz`;
+            document.getElementById('silverPrice').textContent = `Argent: $${livePrices['silver-token-xagx'].toLocaleString('fr-FR')} / oz`;
+            document.getElementById('collateral-price').textContent = `$${livePrices[document.getElementById('collateral-type').value].toLocaleString('fr-FR')}`;
+            gsap.from(".crypto-prices p", { opacity: 0, duration: 0.5, stagger: 0.1 });
+        }
+
+        function calculateLoan() {
+            const type = document.getElementById('collateral-type').value;
+            const amount = parseFloat(document.getElementById('collateral-amount').value) || 0;
+            const duration = parseFloat(document.getElementById('loan-duration').value) || 0;
+            const rate = parseFloat(document.getElementById('interest-rate').value) || 0;
+            const value = amount * livePrices[type];
+            const ltv = 0.7;
+            const loan = value * ltv;
+            const monthlyRate = rate / 100 / 12;
+            const payment = (loan * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -duration));
+            const total = payment * duration;
+            const interest = total - loan;
+
+            document.getElementById('ltv-value').textContent = `${(ltv * 100)}%`;
+            document.getElementById('loan-results').innerHTML = amount && duration && rate ?
+                `<p><strong>Montant du prêt :</strong> $${loan.toLocaleString('fr-FR')}</p><p><strong>Mensuel :</strong> $${payment.toLocaleString('fr-FR')}</p><p><strong>Intérêts :</strong> $${interest.toLocaleString('fr-FR')}</p><p><strong>Total :</strong> $${total.toLocaleString('fr-FR')}</p>` :
+                '<p style="color: red;">Remplissez tous les champs.</p>';
+            document.getElementById('loan-request-btn').classList.toggle('hidden', !(amount && duration && rate));
+        }
+
+        async function connectMetaMask() {
+            if (!window.ethereum) {
+                document.getElementById('error-message').textContent = 'MetaMask requis.';
+                return;
+            }
+            try {
+                document.getElementById('loading-spinner').classList.remove('hidden');
+                const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+                userAddress = accounts[0];
+                document.getElementById('wallet-address').classList.remove('hidden');
+                document.getElementById('wallet-address').textContent = `Adresse: ${userAddress.slice(0, 6)}...${userAddress.slice(-4)}`;
+
+                if (await window.ethereum.request({ method: 'eth_chainId' }) !== '0xa4b1') {
+                    await window.ethereum.request({ method: 'wallet_switchEthereumChain', params: [{ chainId: '0xa4b1' }] });
+                }
+
+                provider = new ethers.providers.Web3Provider(window.ethereum);
+                signer = provider.getSigner();
+                contract = new ethers.Contract(contractAddress, contractABI, signer);
+
+                const isKYC = await contract.utilisateursKYC(userAddress);
+                if (!isKYC) document.getElementById('error-message').textContent = 'KYC requis.';
+                else document.getElementById('connect-metamask').textContent = 'Connecté';
+            } catch (e) {
+                document.getElementById('error-message').textContent = e.message;
+            } finally {
+                document.getElementById('loading-spinner').classList.add('hidden');
+            }
+        }
+
+        async function swapLEG() {
+            if (!contract) {
+                alert('Connectez MetaMask d’abord !');
+                return;
+            }
+            const amount = document.getElementById('swap-amount').value;
+            document.getElementById('swap-result').textContent = `Échange de ${amount} ETH en cours...`;
+            // Logique d'échange à implémenter
+        }
+
+        async function requestLoan() {
+            if (!contract) return;
+            try {
+                const type = document.getElementById('collateral-type').value;
+                const amount = ethers.utils.parseUnits(document.getElementById('collateral-amount').value, 18);
+                const loan = ethers.utils.parseUnits(document.getElementById('loan-results').querySelector('p').textContent.split('$')[1].replace(/,/g, ''), 6);
+                const collateralMap = { bitcoin: "0x2f2a2543B76A4166549F7aaB2e75Bef0aefC5B0f", 'pax-gold': "0x...", 'silver-token-xagx': "0x...", immobilier: "0x..." };
+                const tx = await contract.ouvrirPret(collateralMap[type], amount, loan);
+                await tx.wait();
+                document.getElementById('error-message').textContent = 'Prêt demandé avec succès !';
+            } catch (e) {
+                document.getElementById('error-message').textContent = e.message;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchLivePrices();
+            setInterval(fetchLivePrices, 60000);
+            document.getElementById('connect-metamask').addEventListener('click', connectMetaMask);
+            document.getElementById('collateral-type').addEventListener('change', () => document.getElementById('collateral-price').textContent = `$${livePrices[document.getElementById('collateral-type').value].toLocaleString('fr-FR')}`);
+
+            gsap.from('.section', { opacity: 0, y: 50, duration: 1, stagger: 0.3, scrollTrigger: { trigger: '.section', start: 'top 80%' } });
+
+            document.querySelector('.back-to-top').addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            const modal = document.getElementById('demo-modal');
+            document.getElementById('open-demo-modal').addEventListener('click', (e) => {
+                e.preventDefault();
+                modal.style.display = 'block';
+                gsap.fromTo(modal, { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.3 });
+            });
+            document.getElementById('close-demo-modal').addEventListener('click', () => {
+                gsap.to(modal, { opacity: 0, scale: 0.9, duration: 0.3, onComplete: () => modal.style.display = 'none' });
+            });
+
+            document.getElementById('demo-form').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const formData = new FormData(e.target);
+                const res = await fetch(e.target.action, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } });
+                document.getElementById('form-message').classList.remove('hidden');
+                document.getElementById('form-message').textContent = res.ok ? 'Merci ! Nous vous contacterons.' : 'Erreur lors de l’envoi.';
+            });
+
+            document.getElementById('subscribe-form').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const formData = new FormData(e.target);
+                const res = await fetch(e.target.action, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } });
+                document.getElementById('subscribe-message').classList.remove('hidden');
+                document.getElementById('subscribe-message').textContent = res.ok ? 'Inscription réussie !' : 'Erreur lors de l’inscription.';
+            });
+
+            document.getElementById('theme-toggle').addEventListener('click', () => {
+                document.body.classList.toggle('dark-theme');
+                document.querySelector('#theme-toggle i').classList.toggle('fa-sun');
+                document.querySelector('#theme-toggle i').classList.toggle('fa-moon');
+            });
+        });
+    </script>
+</body>
+</html>
