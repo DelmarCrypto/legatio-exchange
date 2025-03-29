@@ -304,12 +304,36 @@ body {
 
 .partner-logos-grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr); /* 6 colonnes pour la première rangée */
-    grid-template-rows: auto auto; /* Deux rangées explicites */
-    gap: 1rem;
+    grid-template-columns: repeat(6, 1fr); /* 6 colonnes pour les 6 logos */
+    gap: 1.5rem; /* Augmenter l'espace entre les logos pour éviter les chevauchements */
     justify-items: center;
     align-items: center;
     padding: 0 1rem;
+}
+
+/* Ajuster la disposition pour les écrans plus petits */
+@media (max-width: 768px) {
+    .partner-logos-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 1rem;
+    }
+
+    .partner-logos svg {
+        width: 100px;
+        height: 40px;
+    }
+
+    .partner-logos svg text {
+        font-size: 14px; /* Réduire encore la taille du texte sur petits écrans */
+    }
+}
+
+.partner-logos svg {
+    transition: transform 0.3s;
+}
+
+.partner-logos svg:hover {
+    transform: scale(1.1);
 }
 
 /* Forcer MakerDAO et Coinbase sur la deuxième rangée */
