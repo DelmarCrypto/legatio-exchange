@@ -48,6 +48,7 @@
             --glow: 0 0 10px #FF007A, 0 0 20px #FF007A, 0 0 30px #FF66B2;
             --success: #28a745;
             --warning: #dc3545;
+            --gold: #FFD700; /* Couleur dorée pour le L */
         }
 
         * {
@@ -450,6 +451,13 @@
             transform: scale(1.1);
         }
 
+        /* Centrage de la phrase dans la section start-section */
+        .start-section p {
+            text-align: center;
+            margin: 0 auto;
+            max-width: 800px; /* Limite la largeur pour une meilleure lisibilité */
+        }
+
         @media (max-width: 768px) {
             .partner-logos-grid {
                 grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -492,6 +500,12 @@
                 font-size: 16px;
                 padding: 0.8rem;
             }
+
+            /* Ajustement du texte sur mobile */
+            .start-section p {
+                max-width: 100%;
+                padding: 0 1rem;
+            }
         }
 
         .hidden {
@@ -505,9 +519,9 @@
             <a href="#start" class="logo-link" aria-label="Retour à l'accueil">
                 <svg width="250" height="80" xmlns="http://www.w3.org/2000/svg" class="logo">
                     <defs>
-                        <linearGradient id="neonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color: #FF007A;" />
-                            <stop offset="100%" style="stop-color: #00DDEB;" />
+                        <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color: var(--gold);" />
+                            <stop offset="100%" style="stop-color: #DAA520;" />
                         </linearGradient>
                         <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
                             <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
@@ -517,23 +531,20 @@
                             </feMerge>
                         </filter>
                     </defs>
+                    <!-- Cercle doré avec le "L" -->
                     <g transform="translate(10, 10)">
-                        <path d="M30 5 L55 17" fill="none" stroke="url(#neonGradient)" stroke-width="2" filter="url(#glow)"/>
-                        <path d="M55 17 L55 43" fill="none" stroke="url(#neonGradient)" stroke-width="2" filter="url(#glow)"/>
-                        <path d="M55 43 L30 55" fill="none" stroke="url(#neonGradient)" stroke-width="2" filter="url(#glow)"/>
-                        <path d="M30 55 L5 43" fill="none" stroke="url(#neonGradient)" stroke-width="2" filter="url(#glow)"/>
-                        <path d="M5 43 L5 17" fill="none" stroke="url(#neonGradient)" stroke-width="2" filter="url(#glow)"/>
-                        <path d="M5 17 L30 5" fill="none" stroke="url(#neonGradient)" stroke-width="2" filter="url(#glow)"/>
-                        <rect x="25" y="30" width="10" height="15" fill="none" stroke="url(#neonGradient)" stroke-width="1"/>
-                        <polygon points="25,30 30,25 35,30" fill="none" stroke="url(#neonGradient)" stroke-width="1"/>
-                        <path d="M30 45 L30 15 M25 20 L30 15 L35 20" fill="none" stroke="url(#neonGradient)" stroke-width="2" filter="url(#glow)"/>
-                        <circle cx="60" cy="10" r="2" fill="url(#neonGradient)" filter="url(#glow)"/>
-                        <circle cx="0" cy="10" r="2" fill="url(#neonGradient)" filter="url(#glow)"/>
-                        <circle cx="60" cy="50" r="2" fill="url(#neonGradient)" filter="url(#glow)"/>
-                        <circle cx="0" cy="50" r="2" fill="url(#neonGradient)" filter="url(#glow)"/>
+                        <circle cx="35" cy="35" r="30" fill="none" stroke="url(#goldGradient)" stroke-width="4" filter="url(#glow)"/>
+                        <circle cx="35" cy="35" r="25" fill="#1A1A1A"/>
+                        <text x="25" y="45" font-family="Orbitron, sans-serif" font-size="30" font-weight="700" fill="url(#goldGradient)" filter="url(#glow)">L</text>
+                        <!-- Détails décoratifs autour du cercle -->
+                        <circle cx="35" cy="5" r="3" fill="url(#goldGradient)" filter="url(#glow)"/>
+                        <circle cx="35" cy="65" r="3" fill="url(#goldGradient)" filter="url(#glow)"/>
+                        <circle cx="5" cy="35" r="3" fill="url(#goldGradient)" filter="url(#glow)"/>
+                        <circle cx="65" cy="35" r="3" fill="url(#goldGradient)" filter="url(#glow)"/>
                     </g>
-                    <g transform="translate(80, 10)">
-                        <text x="0" y="30" font-family="Orbitron, sans-serif" font-size="24" font-weight="700" fill="url(#neonGradient)" filter="url(#glow)">Legatio</text>
+                    <!-- Texte "Legatio Finance" à droite -->
+                    <g transform="translate(90, 10)">
+                        <text x="0" y="30" font-family="Orbitron, sans-serif" font-size="24" font-weight="700" fill="url(#goldGradient)" filter="url(#glow)">Legatio</text>
                         <text x="0" y="50" font-family="Orbitron, sans-serif" font-size="14" font-weight="400" fill="#FFFFFF">Finance</text>
                     </g>
                 </svg>
@@ -552,7 +563,7 @@
         <section class="header" id="start">
             <div class="header-content">
                 <h1>Legatio Finance</h1>
-                <p class="catchphrase">Le futur des prêts adossés à des actifs réels grâce à la blockchain. </p>
+                <p class="catchphrase">Le futur des prêts adossés à des actifs réels grâce à la blockchain.</p>
                 <a href="#start" class="cta-button" aria-label="Découvrir les offres">Découvrir Maintenant</a>
             </div>
         </section>
