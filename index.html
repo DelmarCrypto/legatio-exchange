@@ -456,6 +456,16 @@
             max-width: 800px; /* Limite la largeur pour une meilleure lisibilité */
         }
 
+        /* Suppression des puces blanches dans la section Token LEG */
+        .token-sale-item ul {
+            list-style: none; /* Supprime les puces */
+            padding-left: 0; /* Supprime l'indentation par défaut */
+        }
+
+        .token-sale-item ul li {
+            margin-bottom: 0.5rem; /* Ajoute un espacement entre les éléments */
+        }
+
         @media (max-width: 768px) {
             .partner-logos-grid {
                 grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
